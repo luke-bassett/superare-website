@@ -1,0 +1,18 @@
+baseURL = 'https://superare.cc/'
+languageCode = 'en-us'
+title = 'Superare Racing'
+
+[params]
+  description = ''
+
+  [params.social]
+    instagram = 'superare.cc'  # Add handle without @
+    strava = ''                # Add club path
+    email = ''
+
+  [params.colors]
+    background = '#325C26'    # Dark forest green
+    text = '#FFFFFF'          # White
+    accent = '#D385C9'        # Pink/magenta
+    secondary = '#C9DBC3'     # Light sage
+    tertiary = '#4D4D86'      # Dark slate blue

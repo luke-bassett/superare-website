@@ -1,0 +1,13 @@
+# Hugo
+/public/
+/resources/_gen/
+
+# macOS
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
