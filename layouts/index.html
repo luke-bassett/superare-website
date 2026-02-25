@@ -1,126 +1,82 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{{ .Site.Params.description }}">
-    <title>{{ .Site.Title }}</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background-color: {{ .Site.Params.colors.background }};
-            color: {{ .Site.Params.colors.text }};
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            padding: 2rem;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 600px;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: {{ .Site.Params.colors.text }};
-            letter-spacing: 0.05em;
-        }
-
-        .tagline {
-            font-size: 1.5rem;
-            font-weight: 300;
-            margin-bottom: 2rem;
-            color: {{ .Site.Params.colors.accent }};
-        }
-
-        .description {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .location {
-            font-size: 1rem;
-            margin-bottom: 3rem;
-            color: {{ .Site.Params.colors.secondary }};
-            font-weight: 500;
-        }
-
-        .links {
-            display: flex;
-            gap: 2rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 3rem;
-        }
-
-        .links a {
-            color: {{ .Site.Params.colors.text }};
-            text-decoration: none;
-            padding: 0.75rem 1.5rem;
-            border: 2px solid {{ .Site.Params.colors.accent }};
-            border-radius: 4px;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-
-        .links a:hover {
-            background-color: {{ .Site.Params.colors.accent }};
-            transform: translateY(-2px);
-        }
-
-        .coming-soon {
-            font-size: 0.9rem;
-            opacity: 0.6;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-        }
-
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 2rem;
-            }
-            .tagline {
-                font-size: 1.2rem;
-            }
-            .links {
-                flex-direction: column;
-                gap: 1rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A Portland-based bike racing team looking to instill friendly competition, inclusion, and a love for bike racing.">
+  <title>{{ .Site.Title }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>{{ .Site.Title }}</h1>
-        <div class="tagline">{{ .Site.Params.tagline }}</div>
-        <div class="description">{{ .Site.Params.description }}</div>
-        <div class="location">Portland, Oregon</div>
 
-        <div class="links">
-            {{ with .Site.Params.social.email }}
-            <a href="mailto:{{ . }}">Contact</a>
-            {{ end }}
-            {{ with .Site.Params.social.instagram }}
-            <a href="https://instagram.com/{{ . }}" target="_blank" rel="noopener">Instagram</a>
-            {{ end }}
-            {{ with .Site.Params.social.strava }}
-            <a href="https://strava.com/{{ . }}" target="_blank" rel="noopener">Strava</a>
-            {{ end }}
-        </div>
+  {{ partial "nav.html" . }}
 
-        <div class="coming-soon">Website Coming Soon</div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>Superare<br>Racing</h1>
+      <p class="hero-location">Portland, Oregon &nbsp;·&nbsp; Bike Racing</p>
     </div>
+  </section>
+
+  <!-- SPONSORS -->
+  <section class="sponsors" id="sponsors">
+    <div class="section-inner">
+      <h2>Our Partners</h2>
+      <div class="sponsor-grid">
+
+        <a href="https://www.cyclepathpdx.com/" class="sponsor-card" target="_blank" rel="noopener">
+          <img src="/images/sponsors/cyclepath.avif" alt="Cyclepath PDX">
+        </a>
+
+        <a href="https://www.cafecincosietepdx.com/" class="sponsor-card" target="_blank" rel="noopener">
+          <img src="/images/sponsors/cincosiete.gif" alt="Cafe Cinco Siete PDX">
+        </a>
+
+        <a href="https://www.skratchlabs.com/" class="sponsor-card sponsor-card--dark" target="_blank" rel="noopener">
+          <img src="/images/sponsors/skratch.svg" alt="Skratch Labs">
+        </a>
+
+        <a href="https://primoscycles.com/" class="sponsor-card" target="_blank" rel="noopener">
+          <img src="/images/sponsors/primos.avif" alt="Primos Cycles">
+        </a>
+
+        <a href="https://www.castelli-cycling.com/" class="sponsor-card" target="_blank" rel="noopener">
+          <img src="/images/sponsors/castelli.svg" alt="Castelli">
+        </a>
+
+        <a href="https://ridehifi.com/" class="sponsor-card" target="_blank" rel="noopener">
+          <img src="/images/sponsors/ridehifi.avif" alt="Ride HiFi">
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GOLD SPRINTS -->
+  <section class="race-banner">
+    <div class="section-inner">
+      <span class="section-label section-label--light">Upcoming Event</span>
+      <h2>Gold Sprints</h2>
+      <p class="race-meta">Thursday, March 6th &nbsp;·&nbsp; 7:00 PM &nbsp;·&nbsp; Gigantic Brewing, Portland</p>
+      <a href="/gold-sprints/" class="btn">Details &rarr;</a>
+    </div>
+  </section>
+
+  <!-- BANANA BELT -->
+  <section class="race-banner">
+    <div class="section-inner">
+      <span class="section-label section-label--light">We're Hosting a Race</span>
+      <h2>Banana Belt<br>Road Race</h2>
+      <p class="race-meta">Sunday, April 19, 2026 &nbsp;·&nbsp; Henry Hagg Lake, Forest Grove, OR</p>
+      <a href="/race/" class="btn">Banana Belt &rarr;</a>
+    </div>
+  </section>
+
+  {{ partial "footer.html" . }}
+
 </body>
 </html>
