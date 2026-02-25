@@ -1,0 +1,646 @@
+/* ============================================================
+   SUPERARE RACING — GLOBAL STYLES
+   ============================================================ */
+
+/* Reset */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Tokens */
+:root {
+  --green:       #325C26;
+  --green-dark:  #1D3A14;
+  --blue:        #4DC4F0;
+  --cream:       #DDD5B8;
+  --cream-light: #F5F1E6;
+  --white:       #fff;
+  --text:        #1D3A14;
+  --text-mid:    #3A4A32;
+  --max-w:       1100px;
+  --pad:         5rem 1.5rem;
+  --pad-sm:      3.5rem 1.5rem;
+}
+
+body {
+  font-family: 'Barlow', system-ui, -apple-system, sans-serif;
+  background: var(--white);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--green-dark);
+  padding: 0 1.5rem;
+}
+
+.nav-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 62px;
+}
+
+.nav-logo {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cream);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-links a {
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cream);
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.15s;
+}
+
+.nav-links a:hover { opacity: 1; }
+
+.nav-race {
+  color: var(--blue) !important;
+  opacity: 1 !important;
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  background: var(--green);
+  padding: 8rem 1.5rem 7rem;
+  text-align: center;
+}
+
+.hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: clamp(4rem, 13vw, 9rem);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 0.9;
+  color: var(--cream);
+  margin-bottom: 2rem;
+}
+
+.hero-location {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 1.25rem;
+}
+
+.hero-tagline {
+  font-size: 1.1rem;
+  color: var(--cream);
+  opacity: 0.8;
+  max-width: 460px;
+  margin: 0 auto 3.5rem;
+  line-height: 1.7;
+}
+
+.hero-cta {
+  display: inline-block;
+  background: var(--blue);
+  color: var(--green-dark);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.9rem 2.75rem;
+  border-radius: 2px;
+  transition: background 0.15s, transform 0.15s;
+}
+
+.hero-cta:hover {
+  background: #76D4F5;
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   SHARED SECTION UTILITIES
+   ============================================================ */
+.section-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.section-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 0.6rem;
+  display: block;
+}
+
+.section-label--light { color: var(--blue); }
+
+/* ============================================================
+   ABOUT
+   ============================================================ */
+.about {
+  padding: var(--pad);
+  background: var(--cream-light);
+}
+
+.about h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: clamp(2.5rem, 4vw, 3.25rem);
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 1.25rem;
+  line-height: 1;
+}
+
+.about p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-mid);
+  max-width: 640px;
+}
+
+/* ============================================================
+   RACE BANNER
+   ============================================================ */
+.race-banner {
+  padding: var(--pad);
+  background: var(--green-dark);
+}
+
+.race-banner h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  text-transform: uppercase;
+  color: var(--cream);
+  line-height: 1;
+  margin-bottom: 0.6rem;
+}
+
+.race-banner .race-meta {
+  font-size: 1.05rem;
+  color: var(--cream);
+  opacity: 0.72;
+  margin-bottom: 2.5rem;
+}
+
+.btn {
+  display: inline-block;
+  background: transparent;
+  color: var(--blue);
+  border: 2px solid var(--blue);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.8rem 2.25rem;
+  border-radius: 2px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.btn:hover {
+  background: var(--blue);
+  color: var(--green-dark);
+}
+
+/* ============================================================
+   SPONSORS
+   ============================================================ */
+.sponsors {
+  padding: var(--pad);
+  background: var(--white);
+}
+
+.sponsors h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: clamp(2.5rem, 4vw, 3.25rem);
+  text-transform: uppercase;
+  color: var(--text);
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+
+.sponsors-sub {
+  font-size: 0.95rem;
+  color: #777;
+  margin-bottom: 3rem;
+}
+
+.sponsor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.25rem;
+}
+
+.sponsor-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 110px;
+  padding: 2rem 1.5rem;
+  border: 1.5px solid #DDD;
+  border-radius: 3px;
+  text-decoration: none;
+  color: var(--text);
+  text-align: center;
+  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+}
+
+.sponsor-card:hover {
+  border-color: var(--green);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(50, 92, 38, 0.1);
+}
+
+.sponsor-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.sponsor-type {
+  font-size: 0.78rem;
+  color: #999;
+  margin-top: 0.35rem;
+  letter-spacing: 0.04em;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer {
+  background: var(--green-dark);
+  padding: 2.5rem 1.5rem;
+}
+
+.footer-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-links a {
+  color: var(--cream);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  opacity: 0.72;
+  transition: opacity 0.15s;
+  letter-spacing: 0.04em;
+}
+
+.footer-links a:hover { opacity: 1; }
+
+.footer-copy {
+  font-size: 0.8rem;
+  color: var(--cream);
+  opacity: 0.38;
+  letter-spacing: 0.04em;
+}
+
+/* ============================================================
+   RACE PAGE — HERO
+   ============================================================ */
+.race-hero {
+  background: var(--green);
+  padding: 6rem 1.5rem 5rem;
+  text-align: center;
+  color: var(--cream);
+}
+
+.race-hosted-by {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.race-hero h1 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: clamp(2.75rem, 8vw, 5.5rem);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  line-height: 0.93;
+  color: var(--cream);
+  margin-bottom: 1.25rem;
+}
+
+.race-date-display {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.3rem;
+  letter-spacing: 0.12em;
+  color: var(--cream);
+  opacity: 0.82;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   RACE PAGE — INFO CARDS
+   ============================================================ */
+.race-info-cards {
+  padding: var(--pad-sm);
+  background: var(--cream-light);
+}
+
+.info-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.info-card {
+  background: var(--white);
+  border-radius: 3px;
+  padding: 1.75rem;
+  border-top: 3px solid var(--green);
+}
+
+.info-card-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.info-card h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--text);
+  margin-bottom: 0.3rem;
+  line-height: 1.2;
+}
+
+.info-card p {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.55;
+}
+
+.info-card a {
+  color: var(--green);
+  text-decoration: none;
+}
+
+.info-card a:hover { text-decoration: underline; }
+
+/* ============================================================
+   RACE PAGE — COURSE
+   ============================================================ */
+.race-course {
+  padding: var(--pad);
+  background: var(--white);
+}
+
+.race-course h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.race-course p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-mid);
+  max-width: 700px;
+  margin-bottom: 1rem;
+}
+
+/* ============================================================
+   RACE PAGE — SCHEDULE
+   ============================================================ */
+.race-schedule {
+  padding: var(--pad);
+  background: var(--cream-light);
+}
+
+.race-schedule h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.schedule-note {
+  font-size: 0.88rem;
+  color: #888;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+.schedule-block {
+  margin-bottom: 2.5rem;
+}
+
+.schedule-block h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1.5px solid var(--green);
+  display: inline-block;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  border-radius: 3px;
+  overflow: hidden;
+  font-size: 0.95rem;
+}
+
+.schedule-table th {
+  background: var(--green-dark);
+  color: var(--cream);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+}
+
+.schedule-table td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid #EEE;
+  color: #333;
+  vertical-align: top;
+}
+
+.schedule-table tr:last-child td { border-bottom: none; }
+.schedule-table tr:nth-child(even) td { background: #F8F8F5; }
+
+.schedule-table td strong {
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* ============================================================
+   RACE PAGE — PRACTICAL INFO
+   ============================================================ */
+.race-practical {
+  padding: var(--pad);
+  background: var(--white);
+}
+
+.race-practical h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 2rem;
+  line-height: 1;
+}
+
+.practical-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.practical-block h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 0.75rem;
+}
+
+.practical-block p,
+.practical-block li {
+  font-size: 0.95rem;
+  color: var(--text-mid);
+  line-height: 1.7;
+}
+
+.practical-block ul {
+  padding-left: 1.25rem;
+}
+
+.practical-block a {
+  color: var(--green);
+  text-decoration: none;
+}
+
+.practical-block a:hover { text-decoration: underline; }
+
+/* ============================================================
+   RACE PAGE — REGISTER CTA
+   ============================================================ */
+.race-register {
+  padding: var(--pad-sm);
+  background: var(--green-dark);
+  text-align: center;
+}
+
+.race-register h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: var(--cream);
+  margin-bottom: 0.75rem;
+  line-height: 1;
+}
+
+.race-register p {
+  color: var(--cream);
+  opacity: 0.72;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 700px) {
+  :root {
+    --pad: 3.5rem 1.25rem;
+    --pad-sm: 2.5rem 1.25rem;
+  }
+
+  .nav-links { gap: 1.25rem; }
+  .nav-links a { font-size: 0.75rem; }
+
+  .footer-inner { flex-direction: column; align-items: flex-start; }
+
+  .schedule-table { font-size: 0.88rem; }
+  .schedule-table th, .schedule-table td { padding: 0.6rem 0.75rem; }
+}
