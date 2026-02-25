@@ -80,7 +80,7 @@ nav {
 
 .nav-links a:hover { opacity: 1; }
 
-.nav-race {
+.nav-event {
   color: var(--blue) !important;
   opacity: 1 !important;
 }
