@@ -215,6 +215,82 @@ nav {
 }
 
 /* ============================================================
+   GOLD SPRINTS
+   ============================================================ */
+.gold-sprints {
+  padding: var(--pad);
+  background: var(--cream-light);
+}
+
+.gold-sprints-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 3rem;
+  align-items: center;
+}
+
+.gold-sprints h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 3rem);
+  text-transform: uppercase;
+  color: var(--text);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.gs-presented {
+  font-size: 0.88rem;
+  color: #888;
+  margin-bottom: 1.25rem;
+}
+
+.gs-details {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.4rem 1.25rem;
+  font-size: 0.92rem;
+  margin-bottom: 1.25rem;
+}
+
+.gs-details dt {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--green);
+  padding-top: 0.1rem;
+  white-space: nowrap;
+}
+
+.gs-details dd {
+  color: var(--text-mid);
+  line-height: 1.5;
+}
+
+.gs-footer {
+  font-size: 0.82rem;
+  color: #999;
+}
+
+.gold-sprints-flier img {
+  width: 220px;
+  border-radius: 3px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 700px) {
+  .gold-sprints-inner {
+    grid-template-columns: 1fr;
+  }
+  .gold-sprints-flier img {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+/* ============================================================
    SPONSORS
    ============================================================ */
 .sponsors {
