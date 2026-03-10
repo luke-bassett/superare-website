@@ -1,9 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(git --version:*)",
-      "Bash(gh run:*)",
-      "WebFetch(domain:ridewithgps.com)"
-    ]
-  }
-}
