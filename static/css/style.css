@@ -366,7 +366,7 @@ footer {
    ============================================================ */
 .race-hero {
   background: var(--green);
-  padding: 3.5rem 1.5rem 3rem;
+  padding: 3.5rem 1.5rem 2rem;
   text-align: center;
   color: var(--cream);
 }
@@ -399,6 +399,7 @@ footer {
   color: var(--cream);
   opacity: 0.82;
   text-transform: uppercase;
+  margin-bottom: 1rem;
 }
 
 /* ============================================================
