@@ -94,9 +94,12 @@ nav {
    HERO
    ============================================================ */
 .hero {
-  background: var(--green);
+  background:
+    linear-gradient(rgba(27, 51, 34, 0.72), rgba(27, 51, 34, 0.72)),
+    url('/images/hero.jpg') center 40% / cover no-repeat;
   padding: 4rem 1.5rem 3.5rem;
   text-align: center;
+  position: relative;
 }
 
 .hero-inner {
@@ -133,6 +136,25 @@ nav {
   text-transform: uppercase;
   color: var(--lavender);
   margin-bottom: 1rem;
+}
+
+.hero-photo-credit {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 1rem;
+  font-size: 0.78rem;
+  color: var(--cream);
+  opacity: 0.85;
+}
+
+.hero-photo-credit a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hero-photo-credit a:hover {
+  opacity: 1;
+  text-decoration: underline;
 }
 
 .hero-tagline {
@@ -248,6 +270,22 @@ nav {
   box-shadow: 0 4px 24px rgba(0,0,0,0.12);
 }
 
+
+/* ============================================================
+   PHOTO STRIP
+   ============================================================ */
+.photo-strip {
+  height: 200px;
+  overflow: hidden;
+}
+
+.photo-strip img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+}
 
 /* ============================================================
    SPONSORS
@@ -401,6 +439,26 @@ footer {
   text-transform: uppercase;
   margin-bottom: 1rem;
 }
+
+/* ============================================================
+   RACE PAGE — RECAP NOTE
+   ============================================================ */
+.race-recap-note {
+  font-size: 0.95rem;
+  color: var(--cream);
+  opacity: 0.85;
+  max-width: 480px;
+  margin: 0 auto 1.25rem;
+  line-height: 1.65;
+}
+
+.race-recap-note a {
+  color: var(--blue);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.race-recap-note a:hover { text-decoration: underline; }
 
 /* ============================================================
    RACE PAGE — INFO LIST
@@ -613,6 +671,321 @@ footer {
 }
 
 /* ============================================================
+   JOURNAL
+   ============================================================ */
+
+/* Header */
+.journal-header {
+  background: var(--green);
+  padding: 3rem 1.5rem 2rem;
+}
+
+.journal-header h1 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  text-transform: uppercase;
+  color: var(--cream);
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+
+.journal-sub {
+  font-size: 0.9rem;
+  color: var(--cream);
+  opacity: 0.65;
+}
+
+/* List section */
+.journal-list-section {
+  padding: var(--pad);
+  background: var(--white);
+}
+
+/* Entry */
+.journal-entry {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  padding: 1.75rem 0;
+  border-bottom: 1px solid #E5E0D4;
+}
+
+.journal-entry:first-child { border-top: 1px solid #E5E0D4; }
+
+.journal-entry__thumb-link { flex-shrink: 0; }
+
+.journal-entry__thumb-fig {
+  margin: 0;
+  width: 200px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.journal-entry__thumb-fig::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(27, 51, 34, 0.35);
+  opacity: 0;
+  transition: opacity 0.2s;
+  border-radius: 2px;
+}
+
+.journal-entry__thumb-link:hover .journal-entry__thumb-fig::after {
+  opacity: 1;
+}
+
+.journal-entry__thumb {
+  width: 200px;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.25s ease;
+}
+
+.journal-entry__thumb-link:hover .journal-entry__thumb {
+  transform: scale(1.04);
+}
+
+.journal-entry__photo-credit {
+  font-size: 0.65rem;
+  color: var(--text-mid);
+  opacity: 0.55;
+  margin-top: 0.25rem;
+  line-height: 1.2;
+}
+
+.journal-entry__photo-credit a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.journal-entry__photo-credit a:hover {
+  text-decoration: underline;
+}
+
+.journal-entry__body { flex: 1; min-width: 0; }
+
+.journal-entry__meta {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--crimson);
+  margin-bottom: 0.3rem;
+}
+
+.journal-entry__loc { color: var(--text-mid); opacity: 0.72; }
+
+.journal-entry__title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1.35rem;
+  text-transform: uppercase;
+  color: var(--text);
+  line-height: 1.1;
+  margin-bottom: 0.55rem;
+}
+
+.journal-entry__title a { color: inherit; text-decoration: none; }
+.journal-entry__title a:hover { color: var(--green); }
+
+.journal-entry__highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.journal-entry__highlights li {
+  font-size: 0.92rem;
+  color: var(--text-mid);
+  padding-left: 1rem;
+  position: relative;
+}
+
+.journal-entry__highlights li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: var(--green);
+}
+
+.journal-entry__links {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.journal-link {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--green);
+  text-decoration: none;
+}
+
+.journal-link:hover { text-decoration: underline; }
+.journal-link--primary { color: var(--crimson); }
+
+/* Single — hero */
+.journal-hero {
+  background: var(--green);
+  padding: 3.5rem 1.5rem 2.5rem;
+  color: var(--cream);
+}
+
+.journal-hero--img {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.journal-hero--img::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(27, 51, 34, 0.72);
+}
+
+.journal-hero__inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  position: relative;
+}
+
+.journal-back {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--blue);
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 1.25rem;
+  opacity: 0.85;
+}
+
+.journal-back:hover { opacity: 1; }
+
+.journal-hero__inner h1 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 0.95;
+  color: var(--cream);
+  margin-bottom: 0.75rem;
+}
+
+.journal-hero__meta {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--cream);
+  opacity: 0.75;
+}
+
+.journal-hero__credit {
+  font-size: 0.72rem;
+  color: var(--cream);
+  opacity: 0.45;
+  margin-top: 1rem;
+}
+
+.journal-hero__credit a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.journal-hero__credit a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Single — highlights */
+.journal-highlights-section {
+  padding: var(--pad-sm);
+  background: var(--cream-light);
+}
+
+.highlights-block {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.highlights-block li {
+  font-size: 0.95rem;
+  color: var(--text-mid);
+  padding-left: 1.1rem;
+  position: relative;
+}
+
+.highlights-block li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: var(--green);
+}
+
+/* Single — report body */
+.journal-report-section {
+  padding: var(--pad);
+  background: var(--white);
+}
+
+.journal-report-body {
+  max-width: 700px;
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: var(--text-mid);
+}
+
+.journal-report-body p { margin-bottom: 1.25rem; }
+
+.journal-report-body h2,
+.journal-report-body h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text);
+  line-height: 1.1;
+  margin: 1.75rem 0 0.5rem;
+}
+
+.journal-report-body h2 { font-size: 1.5rem; }
+.journal-report-body h3 { font-size: 1.15rem; letter-spacing: 0.05em; }
+
+.journal-report-body img {
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+  margin: 1.25rem 0 0.35rem;
+  display: block;
+}
+
+.journal-report-body img + em {
+  display: block;
+  font-size: 0.78rem;
+  font-style: normal;
+  color: var(--text-mid);
+  opacity: 0.55;
+  margin-bottom: 1.25rem;
+}
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width: 700px) {
@@ -628,4 +1001,6 @@ footer {
   .schedule-table th, .schedule-table td { padding: 0.5rem 0.65rem; }
   .race-info-list { grid-template-columns: 1fr; gap: 0.1rem; }
   .race-info-list dt { margin-top: 0.75rem; }
+  .journal-entry__thumb-fig,
+  .journal-entry__thumb { width: 110px; }
 }

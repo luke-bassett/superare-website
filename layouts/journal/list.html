@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Race results, event reports, and dispatches from Superare Racing.">
+  <title>Journal | Superare Racing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+  {{ partial "nav.html" . }}
+
+  <section class="journal-header">
+    <div class="section-inner">
+      <h1>Journal</h1>
+      <p class="journal-sub">Race results &amp; dispatches from the team.</p>
+    </div>
+  </section>
+
+  <section class="journal-list-section">
+    <div class="section-inner">
+      <div class="journal-list">
+        {{ range .Pages }}
+        <article class="journal-entry{{ if .Params.featured_image }} journal-entry--has-photo{{ end }}">
+          {{ if .Params.featured_image }}
+          <a href="{{ .RelPermalink }}" class="journal-entry__thumb-link" tabindex="-1" aria-hidden="true">
+            <figure class="journal-entry__thumb-fig">
+              <img src="{{ .Params.featured_image }}" alt="{{ .Title }}" class="journal-entry__thumb"{{ if .Params.thumb_natural }} style="height: auto; aspect-ratio: auto;"{{ else if .Params.thumb_position }} style="object-position: {{ .Params.thumb_position }}"{{ end }}>
+              {{ with .Params.photo_credit }}<figcaption class="journal-entry__photo-credit">{{ . | markdownify }}</figcaption>{{ end }}
+            </figure>
+          </a>
+          {{ end }}
+          <div class="journal-entry__body">
+            <div class="journal-entry__meta">
+              <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+              {{ with .Params.location }}<span class="journal-entry__loc">&nbsp;·&nbsp; {{ . }}</span>{{ end }}
+            </div>
+            <h2 class="journal-entry__title">
+              {{ if .Content }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ else }}{{ .Title }}{{ end }}
+            </h2>
+            {{ with .Params.highlights }}
+            <ul class="journal-entry__highlights">
+              {{ range . }}<li>{{ . | markdownify }}</li>{{ end }}
+            </ul>
+            {{ end }}
+            <div class="journal-entry__links">
+              {{ with .Params.results_url }}
+              <a href="{{ . }}" target="_blank" rel="noopener" class="journal-link">Official results →</a>
+              {{ end }}
+              {{ with .Params.instagram_url }}
+              <a href="{{ . }}" target="_blank" rel="noopener" class="journal-link">Instagram →</a>
+              {{ end }}
+              {{ if .Content }}
+              <a href="{{ .RelPermalink }}" class="journal-link journal-link--primary">{{ with .Params.report_label }}{{ . }}{{ else }}More photos →{{ end }}</a>
+              {{ end }}
+            </div>
+          </div>
+        </article>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  {{ partial "footer.html" . }}
+
+</body>
+</html>
