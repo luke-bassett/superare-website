@@ -2,6 +2,7 @@
 title: "Cascade Gravel 2026"
 date: 2026-05-30
 location: "Oregon"
+results_url: "https://my.raceresult.com/389545/"
 featured_image: "/images/journal/cascade-gravel-2026/scenery.jpg"
 photo_credit: "[Adam Lapierre](https://www.gorgegravel.com/)"
 highlights:

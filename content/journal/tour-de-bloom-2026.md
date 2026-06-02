@@ -2,6 +2,8 @@
 title: "Tour de Bloom 2026"
 date: 2026-05-17
 location: "Wenatchee, WA"
+results_url: "https://my.raceresult.com/400740/"
+instagram_url: "https://www.instagram.com/p/DYYpI39A0bz/"
 featured_image: "/images/journal/tour-de-bloom-2026/stage1.jpg"
 highlights:
   - "Luke, Alex, and David headed north for Tour de Bloom, a four-day stage race in Wenatchee."
